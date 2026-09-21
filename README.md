@@ -1,6 +1,6 @@
 # feed-archive
 
-A small teaching experiment about the [Anthropic SDK](https://github.com/anthropics/anthropic-sdk-typescript)
+A small teaching experiment about the [Anthropic Typescript SDK](https://github.com/anthropics/anthropic-sdk-typescript)
 and [MCP](https://modelcontextprotocol.io): an MCP server that owns an archive of
 news feeds, and two hand-written clients that reach it — one deterministic, one
 agentic. Claude Code is deliberately not used as the client; the clients are in
@@ -46,8 +46,9 @@ node ask.js "anything about export controls in the last week?"
 npx @modelcontextprotocol/inspector node mcp-server.js
 ```
 
-Both entry points call the Claude API and spend tokens on every run. Progress goes
-to stderr and the result to stdout, so `node ask.js "..." > answer.md` works.
+<b>Both entry points call the Claude API and spend tokens on every run.</b>
+
+Progress goes to stderr and the result to stdout, so `node ask.js "..." > answer.md` works.
 
 ## Everything else
 
