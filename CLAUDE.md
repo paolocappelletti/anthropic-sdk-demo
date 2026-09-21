@@ -4,9 +4,17 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this project is
 
-A teaching experiment about MCP (Model Context Protocol), built around a news feed
-generator. The feed is not the point: the point is having **one MCP server and two
-hand-written clients**, in order to understand the protocol from the inside.
+A teaching experiment about the **Anthropic SDK** and **MCP** (Model Context
+Protocol), built around a news feed generator. The feed is not the point: the
+point is having one MCP server and two hand-written clients, and seeing how the
+two sides meet.
+
+On the SDK side it exercises the `web_search` server tool with its `pause_turn`
+resume loop, structured outputs via `messages.parse()`, the tool runner
+(`beta.messages.toolRunner()`), the MCP helpers in
+`@anthropic-ai/sdk/helpers/beta/mcp`, adaptive thinking, typed error classes, and
+two models chosen per job. On the MCP side: resources, tools, tool annotations,
+the stdio transport, and a client that is not a model.
 
 Claude Code is deliberately not used as the MCP client: the clients are `index.js`
 and `ask.js`, in this repo.
