@@ -1,0 +1,11 @@
+# Credentials. .env.template is committed on purpose, so no blanket .env* here.
+.env
+
+node_modules/
+npm-debug.log*
+
+# The MCP server's store. Generated, and kept out of git by choice - note that it
+# is not reproducible: the news of a given day cannot be fetched again later, so
+# this working copy is the only one. The server recreates the directory on the
+# first store_feed if it is missing.
+archive/

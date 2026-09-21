@@ -170,10 +170,19 @@ That is where the prefixes in `bridge.js` stop being theory.
 
 ### Housekeeping
 
-The repo is **not under git**, and `archive/` is the only place the data lives. A
-`git init` with a `.gitignore` excluding `.env` and `node_modules` is the first
-thing to do if those feeds matter. `.env.template` is meant to be committed — an
-over-broad `.env*` pattern would exclude it too.
+The repo is under git on `main`, with only `CLAUDE.md` committed so far;
+everything else is still untracked.
+
+`.gitignore` covers `.env`, `node_modules/` and `archive/`. Two details:
+`.env.template` is committed, so there is no blanket `.env*` pattern; and
+`archive/` is ignored by choice even though it is **not reproducible** — the news
+of a given day cannot be fetched again later, so the working copy is the only one
+and nothing backs it up.
+
+A fresh clone therefore starts with no `archive/` at all. That is handled: the
+server creates the directory on the first `store_feed`, and until then
+`feed://latest` answers `{"items":[]}`, `search_feed` returns zero matches, and
+`resources/list` lists only `feed://latest`. Nothing errors on a cold start.
 
 ## Known limitations
 
